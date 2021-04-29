@@ -7,16 +7,17 @@ package frc.robot.commands;
 import java.util.function.BooleanSupplier;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+
 import frc.robot.subsystems.Manibus;
 
 public class ManibusImperium extends CommandBase {
     private final Manibus manibus;
-    private final BooleanSupplier forPressed;
+    private final BooleanSupplier forwPressed;
     private final BooleanSupplier backPressed;
   /** Creates a new ManibusImperium. */
   public ManibusImperium(Manibus _subsystem, BooleanSupplier _forPressed, BooleanSupplier _backPressed) {
       manibus=_subsystem;
-      forPressed=_forPressed;
+      forwPressed=_forPressed;
       backPressed=_backPressed;
     
     // Use addRequirements() here to declare subsystem dependencies.
@@ -32,13 +33,15 @@ public class ManibusImperium extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      final boolean forwardPressed = forPressed.getAsBoolean();
+      final boolean forwardPressed = forwPressed.getAsBoolean();
       final boolean backwardPressed = backPressed.getAsBoolean();
       if (forwardPressed && !backwardPressed){
           manibus.forward();
       } else if(backwardPressed && !forwardPressed){
           manibus.backwards();
-      }
+      } else if(!backwardPressed && !forwardPressed){
+            manibus.stop();
+        }
         
   }
 

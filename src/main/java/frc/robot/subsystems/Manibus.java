@@ -4,16 +4,17 @@
 
     package frc.robot.subsystems;
 
-    import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+    import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
     public class Manibus extends SubsystemBase {
-    private final WPI_VictorSPX aLifter, bLifter;
+    private final WPI_TalonSRX aLifter, bLifter;
     public Manibus() { 
-        aLifter = new WPI_VictorSPX(Constants.aLifter);
-        bLifter = new WPI_VictorSPX(Constants.bLifter);
+        aLifter = new WPI_TalonSRX(Constants.aLifter);
+        bLifter = new WPI_TalonSRX(Constants.bLifter);
         
     }
     public void forward(){

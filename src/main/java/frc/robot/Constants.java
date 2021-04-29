@@ -15,24 +15,30 @@ package frc.robot;
 
 public final class Constants {
     public static final int 
-    lightNum =30;      
+        lightNum=30;      
     public static final int 
-        rTalon=7,
-        lTalon=5;
+        rTalon=1,
+        lTalon=4;
     public static final int
         offButton=4,
         whiteButton=2,
         redButton=1,
         badButton=3,
-        liftButton=1,
-        speedJoystick=2,
-        rotationJoystick=1,
-        speedJoystickScalar=1,
-        rotationJoystickScalar=-1;
+        speedJoystick=1,
+        rotationJoystick=0,
+        speedJoystickScalar=-1,
+        rotationJoystickScalar=1;
     public static final double 
         maxSpeed=0.8;
     public static final int
-        bLifter=6,
-        aLifter=8;
+        bLifter=9,
+        aLifter=8,
+        liftButton=5,
+        lowerButton=6;
+    public static final int
+        fingerOne=11,
+        fingerTwo=12,
+        fingerButtonRight=10,
+        fingerButtonLeft=11;
     
 }

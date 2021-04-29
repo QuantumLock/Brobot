@@ -15,6 +15,8 @@ import frc.robot.subsystems.Manibus;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants;
+import frc.robot.commands.DigitosImperium;
+import frc.robot.subsystems.Digitos;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -34,20 +36,28 @@ public class RobotContainer {
     private final JoystickButton offButton;
     private final ManibusImperium manibusImperium;
     private final Manibus manibus;
+    private final Digitos digitos;
+    private final DigitosImperium digitosImperium;
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() { 
     lights = new LightSubsystem();
     manibus = new Manibus();
-    
     controller = new Joystick(0);
     manibusImperium = new ManibusImperium(
         manibus,
-        () -> controller.getRawButton(Constants.aLifter),
-        () -> controller.getRawButton(Constants.bLifter));
+        () -> controller.getRawButton(Constants.liftButton),
+        () -> controller.getRawButton(Constants.lowerButton));
+        manibus.setDefaultCommand(manibusImperium);
     redButton = new JoystickButton(controller, Constants.redButton);
     whiteButton = new JoystickButton(controller, Constants.whiteButton);
     badButton = new JoystickButton(controller, Constants.badButton);
     offButton = new JoystickButton(controller, Constants.offButton);
+    digitos = new Digitos();
+    digitosImperium = new DigitosImperium(
+        digitos, 
+        () -> controller.getRawButton(Constants.fingerButtonRight), 
+        () -> controller.getRawButton(Constants.fingerButtonLeft));
+        digitos.setDefaultCommand(digitosImperium);
     crura = new Crura();
     cruraImperium = new CruraImperium(
     crura,
