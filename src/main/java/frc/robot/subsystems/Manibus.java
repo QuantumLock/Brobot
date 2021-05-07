@@ -18,11 +18,12 @@ import frc.robot.Constants;
         
     }
     public void forward(){
-       aLifter.set(0.5);
-       bLifter.set(0.5);
+        aLifter.set(-0.5);
+        bLifter.set(0.5);
+        System.out.print("go");
     }
     public void backwards(){
-        aLifter.set(-0.5);
+        aLifter.set(0.5);
         bLifter.set(-0.5);
     }
     public void stop(){

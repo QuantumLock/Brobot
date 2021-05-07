@@ -21,9 +21,9 @@ public final class Constants {
         lTalon=4;
     public static final int
         offButton=4,
-        whiteButton=2,
+        whiteButton=13,
         redButton=1,
-        badButton=3,
+        badButton=100,
         speedJoystick=1,
         rotationJoystick=0,
         speedJoystickScalar=-1,
@@ -33,12 +33,12 @@ public final class Constants {
     public static final int
         bLifter=9,
         aLifter=8,
-        liftButton=5,
-        lowerButton=6;
+        liftButton=2,
+        lowerButton=3;
     public static final int
         fingerOne=11,
         fingerTwo=12,
-        fingerButtonRight=10,
-        fingerButtonLeft=11;
+        fingerButtonRight=5,
+        fingerButtonLeft=6;
     
 }

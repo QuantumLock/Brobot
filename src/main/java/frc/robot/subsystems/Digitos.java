@@ -17,10 +17,10 @@ public class Digitos extends SubsystemBase {
   }
   public void right(){
       fingerOne.set(0.5);
-      fingerTwo.set(0.5);
+      fingerTwo.set(-0.5);
   }
   public void left(){
-      fingerOne.set(-0.5);
+      fingerOne.set(0.5);
       fingerTwo.set(-0.5);
   }
   public void stop(){

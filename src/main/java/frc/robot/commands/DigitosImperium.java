@@ -19,6 +19,7 @@ public class DigitosImperium extends CommandBase {
     digitos = _digitos;
     rightPressed = _rightPressed;
     leftPressed = _leftPressed;
+    addRequirements(_digitos);
   }
 
   // Called when the command is initially scheduled.
